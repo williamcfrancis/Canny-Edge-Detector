@@ -20,12 +20,12 @@ are the height and width of the input image respectfully.
 where a 1 is an Edge pixel while 0 is a Non-Edge pixel.
 
 ## Usage
-1. Open [canny_edge_detector.ipynb](https://github.com/williamcfrancis/canny-edge-detector/blob/main/canny_edge_detector.ipynb) using Google colab, Jupyter Notebook or other supporting ipynb editor. 
+1. Open [`canny_edge_detector.ipynb`](https://github.com/williamcfrancis/canny-edge-detector/blob/main/canny_edge_detector.ipynb) using Google colab, Jupyter Notebook or other supporting ipynb editor. 
 2. Download the images and load it into the notebook.
 3. Run the cells sequentially
 
 ## Image Derivative
-The function findDerivatives implements Gaussian smoothing and computes the magnitude and orientation of derivatives for the image.
+The function `findDerivatives` implements Gaussian smoothing and computes the magnitude and orientation of derivatives for the image.
 * (INPUT) I_gray: H x W matrix representing the grayscale image.
 * (OUTPUT) Mag: H x W matrix representing the magnitude of deriva-
 tives.
@@ -36,13 +36,13 @@ tives along the y-axis.
 * (OUTPUT) Ori: H x W matrix representing the orientation of derivatives.
 
 ## Detect Local Maximum
-The function nonMaxSup finds local maximum edge pixels using non-maximum suppression along the line of the gradient, further suppressing noise.
+The function `nonMaxSup` finds local maximum edge pixels using non-maximum suppression along the line of the gradient, further suppressing noise.
 * (INPUT) Mag: H x W matrix representing the magnitude of derivatives.
 * (INPUT) Ori: H x W matrix representing the orientation of derivatives.
 * (OUTPUT) M: H x W binary matrix representing the edge map after non-maximum suppression.
 
 ## Edge Linking 
-After non-maximum suppression, we have a potential edge map. To get the final result, we use low and high thresholds to divide current edges into three categories. If the Magnitude of the edge is below the low threshold, then it is considered noise and discarded. If it is above the high threshold, then we accept it as part of the final edge map. These edges are also known as strong edges. For edges that fall between the two thresholds, we are uncertain about them and these edges are also known as weak edges. In the edgeLink function, we try to link weak edges to strong edges. Those weak edges that can be connected to strong edges stay in the final edge map, and others are discarded.
+After non-maximum suppression, we have a potential edge map. To get the final result, we use low and high thresholds to divide current edges into three categories. If the Magnitude of the edge is below the low threshold, then it is considered noise and discarded. If it is above the high threshold, then we accept it as part of the final edge map. These edges are also known as strong edges. For edges that fall between the two thresholds, we are uncertain about them and these edges are also known as weak edges. In the `edgeLink` function, we try to link weak edges to strong edges. Those weak edges that can be connected to strong edges stay in the final edge map, and others are discarded.
 
 * (INPUT) M: H x W logical map after non-max suppression
 * (INPUT) Mag: H x W matrix represents the magnitude of gradient
@@ -54,7 +54,7 @@ tection map
 
 ## Threshold Tuning
 For each image, we need to tune low and high thresholds and keep the result
-in the thresh_dict. The rule of thumb is to tune the high threshold so that
+in the `thresh_dict`. The rule of thumb is to tune the high threshold so that
 enough edges are preserved and then setting low threshold to be around 0.4
 high threshold to remove noise
 
