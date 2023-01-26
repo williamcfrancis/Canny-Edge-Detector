@@ -23,6 +23,11 @@ as well as orientation.
 2. Seek local maximum edge pixel in corresponding orientation.
 3. Find the appropriate thresholds to get good edges
 
+## Run
+1. Open [canny_edge_detector.ipynb](https://github.com/williamcfrancis/canny-edge-detector/blob/main/canny_edge_detector.ipynb) using Google colab, Jupyter Notebook or other supporting ipynb editor. 
+2. Download the images and load it into the notebook.
+3. Run the cells sequentially
+
 ## Image Derivative
 In function `findDerivatives`, we implement Gaussian smoothing, compute
 magnitude and orientation of derivatives for the image.
