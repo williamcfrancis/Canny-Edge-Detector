@@ -20,9 +20,10 @@ are the height and width of the input image respectfully.
 where a 1 is an Edge pixel while 0 is a Non-Edge pixel.
 
 ## Usage
-1. Open [`canny_edge_detector.ipynb`](https://github.com/williamcfrancis/canny-edge-detector/blob/main/canny_edge_detector.ipynb) using Google colab, Jupyter Notebook or other supporting ipynb editor. 
-2. Download the images and load it into the notebook.
-3. Run the cells sequentially
+1. Clone into this repository using `!git clone https://github.com/williamcfrancis/canny-edge-detector.git`
+2. Open [`canny_edge_detector.ipynb`](https://github.com/williamcfrancis/canny-edge-detector/blob/main/canny_edge_detector.ipynb) using Google colab, Jupyter Notebook or other supporting ipynb editor. 
+3. Download the images and load it into the notebook.
+4. Run the cells sequentially
 
 ## Image Derivative
 The function `findDerivatives` implements Gaussian smoothing and computes the magnitude and orientation of derivatives for the image.
