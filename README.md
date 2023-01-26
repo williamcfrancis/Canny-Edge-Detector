@@ -24,7 +24,8 @@ as well as orientation.
 3. Find the appropriate thresholds to get good edges
 
 ## Image Derivative
-We implement Gaussian smoothing, compute magnitude and orientation of derivatives for the image.
+In function `findDerivatives`, we implement Gaussian smoothing, compute
+magnitude and orientation of derivatives for the image.
 * (INPUT) I_gray: H x W matrix representing the grayscale image.
 * (OUTPUT) Mag: H x W matrix representing the magnitude of deriva-
 tives.
@@ -35,7 +36,7 @@ tives along the y-axis.
 * (OUTPUT) Ori: H x W matrix representing the orientation of derivatives.
 
 ## Detect Local Maximum
-The function ’nonMaxSup’ is to find local maximum edge pixel using non-
+The function `nonMaxSup` is to find local maximum edge pixel using non-
 maximum suppression along the line of the gradient. The operation further
 suppresses noises.
 * (INPUT) Mag: H x W matrix representing the magnitude of derivatives.
@@ -49,7 +50,7 @@ categories. If the Magnitude of the edge is below low threshold, then it is nois
 and we discard it. If it is above high threshold, then we accept it as part of final
 edge map. We also call it the strong edge. For these edges that are between two
 thresholds, we are uncertain about them. They are also known as weak edges.
-In the edgeLink function, we try to link weak edges to strong edges. Those
+In the `edgeLink` function, we try to link weak edges to strong edges. Those
 weak edges that can be connected to strong edges stay in the final edge map
 and others are discarded. 
 
@@ -61,3 +62,18 @@ and others are discarded.
 * (OUTPUT) E: H x W binary matrix represents the final canny edge de-
 tection map
 
+## Threshold Tuning
+For each image, we need to tune low and high thresholds and keep the result
+in the thresh_dict. The rule of thumb is to tune the high threshold so that
+enough edges are preserved and then setting low threshold to be around 0.4
+high threshold to remove noise
+
+## Results
+
+![image](https://user-images.githubusercontent.com/38180831/214779496-52ec8c95-e7fc-4d6b-89b1-9448f4110a7a.png)
+
+![image](https://user-images.githubusercontent.com/38180831/214779540-d132255a-1fa5-47d6-818f-8309a456b131.png)
+
+![image](https://user-images.githubusercontent.com/38180831/214779654-41d7c1b2-9cf0-48d2-b35b-7f34a6963f36.png)
+
+![image](https://user-images.githubusercontent.com/38180831/214779708-3cfa2f48-538c-45db-b007-460c4b52d258.png)
