@@ -71,10 +71,10 @@ high threshold to remove noise
 ## Future Work
 There are a few ways to improve the current implementation of the Canny Edge Detector algorithm. Some of the possible future work includes:
 
-Parallel Processing: The current implementation of the algorithm is single-threaded, and thus it may take a significant amount of time to process large images. To speed up the process, we could parallelize the algorithm using multi-threading or GPU processing.
+1. Parallel Processing: The current implementation of the algorithm is single-threaded, and thus it may take a significant amount of time to process large images. To speed up the process, we could parallelize the algorithm using multi-threading or GPU processing.
 
-Adaptive Thresholding: The current implementation uses a fixed low and high threshold for all images. However, different images may require different threshold values to achieve the best results. An adaptive thresholding technique could be implemented to automatically adjust the threshold values based on the characteristics of the input image.
+2. Adaptive Thresholding: The current implementation uses a fixed low and high threshold for all images. However, different images may require different threshold values to achieve the best results. An adaptive thresholding technique could be implemented to automatically adjust the threshold values based on the characteristics of the input image.
 
-Robustness to Noise: The current implementation of the algorithm is sensitive to noise, and it may produce false edges in the presence of noise. To improve the robustness of the algorithm to noise, we could incorporate techniques such as median filtering or bilateral filtering.
+3. Robustness to Noise: The current implementation of the algorithm is sensitive to noise, and it may produce false edges in the presence of noise. To improve the robustness of the algorithm to noise, we could incorporate techniques such as median filtering or bilateral filtering.
 
-Real-time Processing: The current implementation of the algorithm is suitable for offline processing, but it may not be suitable for real-time processing. To make the algorithm suitable for real-time processing, we could implement an optimized version of the algorithm that is more computationally efficient.
+4. Real-time Processing: The current implementation of the algorithm is suitable for offline processing, but it may not be suitable for real-time processing. To make the algorithm suitable for real-time processing, we could implement an optimized version of the algorithm that is more computationally efficient.
